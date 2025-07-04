@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Options</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 id="component-name">Component Name</h1>
+            <div id="search-bar-container">
+                <input type="text" id="search-input" placeholder="Search options...">
+            </div>
+        </header>
+        <main id="options-container">
+            <!-- Las secciones colapsables y las opciones se generarán aquí por JavaScript -->
+            <div class="collapsible-section">
+                <button class="collapsible-header">
+                    <span class="icon">+</span>
+                    <span class="section-title">Sample Section 1 (e.g., dynamic_attributes)</span>
+                </button>
+                <div class="collapsible-content">
+                    <div class="option-item">
+                        <label for="sample_attr_lenx">Length X:</label>
+                        <div class="option-input-wrapper">
+                            <input type="number" id="sample_attr_lenx" data-dictionary="dynamic_attributes" data-key="lenx" value="10.0">
+                            <span class="unit">cm</span>
+                        </div>
+                        <div class="tooltip">?
+                            <span class="tooltiptext">Tooltip for Length X</span>
+                        </div>
+                    </div>
+                    <div class="option-item">
+                        <label for="sample_attr_material">Material:</label>
+                        <div class="option-input-wrapper">
+                            <select id="sample_attr_material" data-dictionary="dynamic_attributes" data-key="material">
+                                <option value="Wood">Wood</option>
+                                <option value="Metal" selected>Metal</option>
+                            </select>
+                        </div>
+                        <div class="tooltip">?
+                            <span class="tooltiptext">Choose the material</span>
+                        </div>
+                    </div>
+                    <div class="option-item">
+                        <label for="sample_attr_showlabel">Show Label:</label>
+                        <div class="option-input-wrapper">
+                            <input type="checkbox" id="sample_attr_showlabel" data-dictionary="dynamic_attributes" data-key="showlabel" checked>
+                        </div>
+                         <div class="tooltip">?
+                            <span class="tooltiptext">Toggle label visibility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="collapsible-section">
+                <button class="collapsible-header">
+                    <span class="icon">+</span>
+                    <span class="section-title">Sample Section 2 (e.g., SU_DefinitionSet)</span>
+                </button>
+                <div class="collapsible-content">
+                     <div class="option-item">
+                        <label for="sample_attr_price">Price:</label>
+                        <div class="option-input-wrapper">
+                            <input type="text" id="sample_attr_price" data-dictionary="SU_DefinitionSet" data-key="Price" value="100.00">
+                             <span class="unit">$</span>
+                        </div>
+                        <div class="tooltip">?
+                            <span class="tooltiptext">Price of the component</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <button id="btn-apply">Apply</button>
+            <button id="btn-reset-all">Reset All</button>
+            <!-- <button id="btn-close">Close</button> // El cierre lo maneja SketchUp usualmente -->
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
